@@ -177,7 +177,7 @@ void parsefile(string filename,int interval,int variance){
                     csvtable.push_back(*temp);
                }
             }else if(findclose(tempint,interval)){
-                if(tempint2>=variance-60){
+                if(tempint2>=60-variance){
                     temp=new currentrowval(stoi(v[0]),v[1],stof(v[2]),stof(v[3]),stof(v[4]),stof(v[5]),stoi(v[6]),v[7],v[8],v[9],v[10],v[11],v[12],v[13],v[14],v[15]);
                     csvtable.push_back(*temp);
                     
@@ -222,7 +222,8 @@ void parsefile(string filename,int interval,int variance){
     //-------------------------
 
     //write to csv file ----------
-    ofstream file_stream;                                                  
+    ofstream file_stream;
+                                            
     file_stream.open ("soundparse.csv");
 
     //write headers to file
@@ -264,5 +265,6 @@ void parsefile(string filename,int interval,int variance){
 
     
 }
+
 
 
